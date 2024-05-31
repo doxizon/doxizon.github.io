@@ -1,33 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Просмотр цены биткоина</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin: 0 auto;
+            width: 50%;
+            padding: 20px;
+        }
+        .coin-price {
+            font-size: 24px;
+        }
+    </style>
 </head>
 <body>
-    <div id="ton-connect"></div>
+    <div class="container">
+        <h1 id="coinName">Bitcoin</h1>
+        <p class="coin-price" id="coinPrice"></p>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
-            manifestUrl: 'https://t.me/bskcoin_bot/app/tonconnect-manifest.json',
-            buttonRootId: 'ton-connect'
-        });
-        async function connectToWallet() {
-            const connectedWallet = await tonConnectUI.connectWallet();
-            // Do something with connectedWallet if needed
-            console.log(connectedWallet);
+        var url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest";
+        var apiKey = "06286c26-854a-48ee-8b1d-39cf0459b550";
+        var qString = "?CMC_PRO_API_KEY=" + apiKey + "&start=1&limit=10&convert=USD";
+
+        function updatePrice() {
+            $.getJSON(url + qString, function(data) {
+                var bitcoinData = data.data.filter(function(coin) {
+                    return coin.symbol == 'BTC';
+                });
+                $('#coinPrice').text('$' + bitcoinData[0].quote.USD.price.toFixed(2));
+            });
         }
 
-        // Call the function
-        connectToWallet().catch(error => {
-            console.error("Error connecting to wallet:", error);
-        });
-        tonConnectUI.uiOptions = {
-            twaReturnUrl: 'https://t.me/bskcoin_bot/app'
-        };
+        // Обновляем цену каждые 5 секунд
+        setInterval(updatePrice, 5000);
     </script>
-    <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
-    <script src="main.js"></script>
 </body>
 </html>
