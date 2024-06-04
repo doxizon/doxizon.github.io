@@ -1,1 +1,50 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+body{
+    background-color: rgb(168, 88, 88);
+}
+#container{
+    /* display: grid; */
+    font-family: 'Comfortaa';   
+}   
+#score{
+    font-size: 100px;
+}
+#nav {
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+}
+#score{
+    display: flex;
+    justify-content: center;
+}
+#home {
+    padding: 9px;
+}
+#earn{
+    padding: 9px;
+}
+#frens{
+    padding: 9px;
+}
+#coin{
+    padding: 10px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.hl {
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    position: fixed;
+    bottom: 60px;
+}
+#ton-connect {
+    display: flex;
+    justify-content: center;
+}
+ 
