@@ -9,30 +9,22 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
+    
     <div id="container">
         <div id="ton-connect"></div>
         <div id="score">0</div>
-        <div id="coin"><img style="border-radius: 50%;" src="img/coin.png" alt=""></div>
+        <div id="coin" ><img id="no-select" draggable="false" style="border-radius: 50%;" src="imgs/coin.png" alt=""></div>
         <div class="hl"></div>
         <div id="nav">
             <div id="home">Home</div>
             <div id="earn">Earn</div>
             <div id="frens">Frens</div>
         </div>
-        
+        <div id="donate" onclick="sendtrans()">Donate</div>
     </div>
-    <script>
-        const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
-            manifestUrl: 'https://doxizon.github.io/tonconnect-manifest.json',
-            buttonRootId: 'ton-connect'
-        });
-        async function connectToWallet() {
-         const connectedWallet = await tonConnectUI.connectWallet();
-            console.log(connectedWallet);
-        }
-
-        
-    </script>
     <script src="main.js"></script>
 </body>
 </html>
+<!-- 
+    Game: UQATnIXNmdRCU86YB9CllVd47_GfY5iaYBL7Zoobu4MuGBKM
+    Main: UQBeXw_in5Sjn8iIkDLz_YFpPuvMc4SWRinEu9kDuK-uE_uS -->
