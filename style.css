@@ -1,7 +1,12 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
 body{
     background-color: rgb(168, 88, 88);
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
 }
 #container{
     /* display: grid; */
@@ -47,4 +52,20 @@ body{
     display: flex;
     justify-content: center;
 }
- 
+.plus{
+    position: relative;
+    font-family: "Comfortaa";
+    font-size: 70px;
+    animation: myAnimation 0.5s infinite;
+}
+@keyframes myAnimation {
+    100% { top: 1%; }
+  }
+#no-select {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+}
