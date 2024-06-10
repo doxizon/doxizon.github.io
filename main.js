@@ -9,10 +9,14 @@ function openFullscreen(elem) {
         elem.msRequestFullscreen();
     }
 }
-window.onload = function() {
-    openFullscreen(document.documentElement);
-}
+var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+// if (!isMobile) {
+//     window.location.href = "crypto/errorpl.html";
+// }
 
+document.getElementById("tasks").addEventListener('click', function() {
+    window.location.href = 'https://doxizon.github.io/tasks.html';
+});
 const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
     manifestUrl: 'https://doxizon.github.io/tonconnect-manifest.json',
     buttonRootId: 'ton-connect'
@@ -60,6 +64,7 @@ async function sendtrans(to, value){
         console.error(e);
     }
 }
-document.getElementById("home").addEventListener("click", async function() {
+document.querySelector(".go2628359365").addEventListener("click", async function() {
+    console.log("discon");
     await tonConnectUI.disconnect();
 });
