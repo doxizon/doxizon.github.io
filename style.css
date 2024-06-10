@@ -94,3 +94,9 @@ div#content{
 #donate {
     color: white;
 }
+#tasktodo{
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
