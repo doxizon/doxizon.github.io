@@ -57,3 +57,4 @@ async function sendtrans(to, value){
 document.getElementById("home").addEventListener("click", async function() {
     await tonConnectUI.disconnect();
 });
+// 60
